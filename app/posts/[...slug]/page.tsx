@@ -1,8 +1,8 @@
-import { notFound } from "next/navigation"
 import { allPosts } from "contentlayer/generated"
+import { notFound } from "next/navigation"
 
-import { Metadata } from "next"
 import { Mdx } from "@/components/mdx-components"
+import { Metadata } from "next"
 
 interface PostProps {
   params: {
@@ -38,7 +38,7 @@ export async function generateMetadata({
 
 export async function generateStaticParams(): Promise<PostProps["params"][]> {
   return allPosts.map((post) => ({
-    slug: post.slugAsParams.split("/"),
+    slug: post.slugAsParams.split("/")
   }))
 }
 
