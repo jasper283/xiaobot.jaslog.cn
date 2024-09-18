@@ -1,7 +1,10 @@
-# Next.js + Contentlayer
+# 小报童精选
 
-A template with Next.js 13 app dir, Contentlayer, Tailwind CSS and dark mode.
+基于 Next.js 搭建了一个极简的小报童导航站，抽空会再优化一下
 
-https://next-contentlayer.vercel.app
+技术栈：
+- Next.js 13
+- Tailwind CSS
 
+https://xiaobot.jaslog.cn
 
