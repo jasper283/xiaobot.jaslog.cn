@@ -18,7 +18,7 @@ export default function Home() {
       <div className="prose dark:prose-invert">
         {allPosts.map((post) => (
           <article key={post._id}>
-            <Link href={post.link} target="_blank">
+            <Link href={post.slug} target="_blank">
               <h2 className="">{post.title}</h2>
             </Link>
             {post.description && <p>{post.description}</p>}

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation"
 
 import { Mdx } from "@/components/mdx-components"
 import { Metadata } from "next"
+import Link from "next/link"
 
 interface PostProps {
   params: {
@@ -52,11 +53,14 @@ export default async function PostPage({ params }: PostProps) {
   return (
     <article className="py-6 prose dark:prose-invert">
       <h1 className="mb-2">{post.title}</h1>
-      {post.description && (
+      <Link href={post.link} target="_blank">
+        <h3 className="underline decoration-red-500">查看专栏详情</h3>
+      </Link>
+      {/* {post.description && (
         <p className="text-xl mt-0 text-slate-700 dark:text-slate-200">
           {post.description}
         </p>
-      )}
+      )} */}
       <hr className="my-4" />
       <Mdx code={post.body.code} />
     </article>
