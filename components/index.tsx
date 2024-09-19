@@ -4,6 +4,7 @@ import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { useState } from 'react'
 import HeaderIcon from './header-icon'
+import { ModeToggle } from './mode-toggle'
 
 const navigation = [
   { name: '博客', href: 'https://jaslog.cn' },
@@ -15,7 +16,7 @@ export default function Index() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <div className="bg-background">
+    <div className="bg-background dark:bg-transparent">
       {/* <header className="absolute inset-x-0 top-0 z-50"> */}
       <header>
         <nav className="flex items-center justify-between">
@@ -36,14 +37,14 @@ export default function Index() {
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
             {navigation.map((item) => (
-              <a key={item.name} target={item.href.indexOf('https://') >= 0 ? "_blank" : '_self'} href={item.href} className="text-sm font-semibold leading-6 text-gray-900">
+              <a key={item.name} target={item.href.indexOf('https://') >= 0 ? "_blank" : '_self'} href={item.href} className="text-sm font-semibold leading-6">
                 {item.name}
               </a>
             ))}
           </div>
-          {/* <div className="ml-6">
+          <div className="ml-6">
             <ModeToggle />
-          </div> */}
+          </div>
         </nav>
         <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
           <div className="fixed inset-0 z-50" />
