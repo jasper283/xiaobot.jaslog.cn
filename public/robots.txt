@@ -1,0 +1,17 @@
+User-agent: *
+Disallow:
+
+# 允许 Googlebot 爬虫抓取所有内容
+User-agent: Googlebot
+Disallow:
+
+# 其他搜索引擎爬虫也可以抓取所有内容
+User-agent: Bingbot
+Disallow:
+
+User-agent: Yahoo
+Disallow:
+
+# 其他示例，限制某些路径的访问
+# Disallow: /private/
+# Disallow: /tmp/
