@@ -1,9 +1,11 @@
-import { Analytics } from "@/components/analytics"
-import { ModeToggle } from "@/components/mode-toggle"
-import { ThemeProvider } from "@/components/theme-provider"
-import { Inter } from "next/font/google"
-import Link from "next/link"
-import "./globals.css"
+
+import { Analytics } from "@/components/analytics";
+import { ThemeProvider } from "@/components/theme-provider";
+
+
+import Index from "@/components";
+import { Inter } from "next/font/google";
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -21,31 +23,16 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <body
-        className={`antialiased min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50 ${inter.className}`}
+        className={`antialiased min-h-screen bg-background dark:bg-slate-950 text-slate-900 dark:text-slate-50`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="max-w-3xl mx-auto py-10 px-4">
-            <header>
-              <div className="flex items-center justify-between">
-                <h1 className="text-2xl font-bold tracking-tight sm:text-4xl text-red-500">
-                  小报童精选专栏
-                </h1>
-                <nav className="ml-auto text-base font-medium space-x-6">
-                  <Link href="/">首页</Link>
-                  <Link href="/about">关于本站</Link>
-
-                </nav>
-                <div className="ml-6">
-                  <ModeToggle />
-                </div>
-
-              </div>
-            </header>
+          <div className="max-w-4xl mx-auto py-10 px-4">
+            <Index></Index>
             <main>{children}</main>
           </div>
           <Analytics />
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }
